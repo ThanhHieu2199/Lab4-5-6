@@ -16,6 +16,7 @@ namespace Lab456.Models
         {
         }
 
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
