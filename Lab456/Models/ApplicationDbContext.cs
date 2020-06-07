@@ -9,7 +9,7 @@ namespace Lab456.Models
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<Course>coursres { get; set; }
+        public DbSet<Course>courses { get; set; }
         public DbSet<Category> Categories { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
