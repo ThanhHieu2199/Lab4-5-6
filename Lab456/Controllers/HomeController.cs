@@ -1,4 +1,5 @@
 ﻿using Lab456.Models;
+using Lab456.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -24,7 +25,13 @@ namespace Lab456.Controllers
                 .Include(c => c.Category)
                 .Where(c => c.DateTime > DateTime.Now);
 
-            return View( upcommingCourses);
+            var viewModel = new CoursesViewModel
+            {
+                UpcommingCourses = upcommingCourses,
+                ShowAction = User.Identity.IsAuthenticated
+            };
+
+            return View( viewModel);
         }
 
         public ActionResult About()
