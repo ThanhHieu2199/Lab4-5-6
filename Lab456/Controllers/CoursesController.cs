@@ -47,7 +47,7 @@ namespace Lab456.Controllers
                 Place = viewModel.Place
 
             };
-            _dbContext.courses.Add(course);
+            _dbContext.Courses.Add(course);
             _dbContext.SaveChanges();
             return RedirectToAction("Index", "Home");
         }
